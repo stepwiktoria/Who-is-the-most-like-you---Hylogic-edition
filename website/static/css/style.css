@@ -1,0 +1,105 @@
+body {
+  background-color: #eeaecaf7;
+  background-image: linear-gradient(#eeaecaf7, #eeaecaf7);
+  height: auto;
+  font-family: 'Helvetica';
+  font-style: thin;
+  font-weight: lighter;
+  color:beige
+
+}
+
+/* xd background-color: #A8C8ED;
+background-image: linear-gradient(#EEAECA, #7673DC);*/ 
+
+#page-title {
+  text-align: center;
+  font-size: 128px;
+  line-height: 100%;
+  color: whitesmoke;
+}
+
+
+.alert.alert-danger {
+  background-color: rgba(255, 192, 203, 0.253);
+  color: white;
+
+}
+
+/* Styl dla komunikatów z klasą "alert-success" */
+.alert.alert-success {
+  background-color: rgba(38, 227, 107, 0.253);
+  color: white;
+
+}
+
+
+/* timer.css */
+#timer-container {
+  box-sizing: border-box;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 80%;
+  max-width: 730px;
+  height: 422px;
+
+  background: rgba(229, 229, 229, 0.3);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#timerp {
+  width: 100%;
+  height: 96px;
+
+  font-size: 128px;
+  line-height: 100%;
+  color:whitesmoke;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+
+@media (min-width: 768px) {
+  .button.btn-primary {
+    font-size: 24px;
+    min-width: 196px;
+  }
+}
+
+button.btn-primary {
+  margin-top: 20px;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.132);
+  border: 3px solid transparent;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  display: flex;
+  font-size: 20px;
+  justify-content: center;
+  line-height: 1em;
+  max-width: 100%;
+  min-width: 140px;
+  padding: 19px 24px;
+  cursor: pointer;
+}
+
+.form-control {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.list-group-item {
+  color: darkgray;
+}

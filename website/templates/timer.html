@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block title %}Pomodoro Timer{% endblock %}
+{% block content %}
+<body>
+  <div id="timer-container">
+    <h2 id="timerp">Study</h2>
+    <button type="submit" class="btn btn-primary" onclick="startTimer()">Start</button>
+  </div>
+  
+  <div id="session-counter">
+    <p>Study Sessions: <span id="session-count">0</span></p>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="{{ url_for('static', filename='js/timer.js') }}"></script>
+  <script>
+    var timeLeft = 1500; // 25 minutes in seconds
+    var isBreak = false;
+    var sessionCount = 0;
+
+    function startTimer() {
+      var timerInterval = setInterval(function() {
+        var minutes = Math.floor(timeLeft / 60);
+        var seconds = timeLeft % 60;
+
+        // Pad the minutes and seconds with leading zeros if necessary
+        minutes = String(minutes).padStart(2, '0');
+        seconds = String(seconds).padStart(2, '0');
+
+        if (!isBreak) {
+          // Display the timer for study
+          $('#timerp').text("Study");
+        } else {
+          // Display the timer for break
+          $('#timerp').text("Break");
+        }
+
+        if (timeLeft === 0) {
+          clearInterval(timerInterval);
+          if (!isBreak) {
+            isBreak = true;
+            timeLeft = 300; // 5 minutes in seconds
+            setTimeout(startTimer, 1000);
+          } else {
+            isBreak = false;
+            $('#timerp').text("Study");
+            sessionCount++;
+            $('#session-count').text(sessionCount);
+          }
+        } else {
+          $('#timerp').text(minutes + ':' + seconds);
+          timeLeft--;
+        }
+      }, 1000);
+    }
+  </script>
+</body>
+{% endblock %}
