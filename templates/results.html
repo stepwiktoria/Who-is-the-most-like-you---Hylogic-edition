@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Psychological Profile Result</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Your Psychological Profile</h1>
-    <p>{{ result }}</p>
+    <div class="container">
+        <h1 class="mt-5 mb-4">Your Psychological Profile</h1>
+        <p>{{ result }}</p>
+    </div>
 </body>
 </html>

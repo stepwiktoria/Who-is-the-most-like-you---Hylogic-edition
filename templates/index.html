@@ -4,16 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Psychological Profile Questionnaire</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Psychological Profile Questionnaire</h1>
-    <form action="/" method="POST">
-        {% for question in questions %}
-        <label>{{ question.question }}</label><br>
-        <input type="number" name="{{ loop.index }}" min="1" max="5" required><br>
-        {% endfor %}
-        <button type="submit">Submit</button>
-    </form>
+    <div class="container">
+        <h1 class="mt-5 mb-4">Psychological Profile Questionnaire</h1>
+        <form action="/" method="POST">
+            {% for question in questions %}
+            <div class="form-group">
+                <label>{{ question.question }}</label>
+                <input type="number" name="{{ loop.index }}" min="1" max="5" class="form-control" required>
+            </div>
+            {% endfor %}
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
 </body>
 </html>
